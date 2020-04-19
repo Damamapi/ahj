@@ -1,0 +1,20 @@
+<div class="slider">
+    <ng-container *ngFor="let item of slider; let i = index"> 
+        <div class="slider__item slider__item--animated" [class.slider__item--active]="slideSelected === i">
+            <img [src]="item.img" [alt]="item.alt" class="slider__img">
+            <div class="slider__blue-square"></div>
+            <div class="slider__info-left">
+                <h2 class="slider__info-left_h2">{{ item.text }}</h2>
+                <button class="slider__info-left_button">Más info</button>
+            </div>
+        </div>
+    </ng-container>
+    <div class="slider__buttons">
+        <span 
+            class="slider__bullets" 
+            *ngFor="let item of slider; let i = index" 
+            [class.slider__bullets--active]="slideSelected === i"
+            (click)="selectedSlide(i)">
+        </span>
+    </div>
+</div>
