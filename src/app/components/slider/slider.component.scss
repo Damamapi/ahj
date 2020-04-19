@@ -1,0 +1,100 @@
+@import "../../../variables.scss";
+/* Animations */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slider {
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    position: relative;
+    &__item {
+        display: none;
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        &--animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        &--active {
+            display: block;
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+        }
+    }
+    &__blue-square {
+        position: absolute;
+        background-color: $primary-color;
+        top: 0;
+        left: -220px;
+        width: 600px;
+        height: 100%;
+        opacity: 0.7;
+        transform: skew(-10deg, 0deg);
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+    &__info-left {
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translate(-7%, -50%);
+        &_h2 {
+            font-size: 40px;
+            color: #fff;
+            width: 215px;
+        }
+        &_button {
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            padding: 7px 10px;
+            font-size: 15px;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+    }
+    &__buttons {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        transform: translate(-50%, -10%);
+    }
+    &__bullets {
+        background-color: $third-gray-color;
+        width: 15px;
+        height: 15px;
+        display: block;
+        cursor: pointer;
+        border-radius: 50%;
+        &--active {
+            background-color: $secondary-color;
+        }
+    }
+}
