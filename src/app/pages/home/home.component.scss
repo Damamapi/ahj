@@ -14,9 +14,12 @@
         &-individual {
             text-align: center;
             width: 400px;
-            &-img {
+            &-media {
                 width: 100%;
                 height: 300px;
+                &:focus {
+                    outline: 0;
+                }
             }
             &-title {
                 font-size: 20px;
