@@ -1,1 +1,104 @@
-<p>contact-us works!</p>
+<section class="contact content">
+    <div class="contact__trick">
+        <h1 class="contact__trick-title">Contáctanos, responderemos <i>as soon as posible</i></h1>
+        <div class="empty"></div>
+    </div>
+    <div class="contact__content">
+        <div class="contact__content-left">
+            <form class="contact__form" [formGroup]="forma" (ngSubmit)="guardar()">
+                <div class="contact__form-field">
+                    <label class="contact__form-field-label">Nombre <span
+                            class="contact__form-field-label--red">*</span></label>
+                    <input 
+                        type="text" 
+                        name="nombre"
+                        formControlName="nombre"
+                        [class.contact__form-field-input--invalid]="nombreNoValido"
+                        class="contact__form-field-input">
+                        <small *ngIf="nombreNoValido" class="contact__form-field--invalid-text">Este campo es obligatorio, mínimo 4 letras.</small>
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-field-label">Apellido <span
+                            class="contact__form-field-label--red">*</span></label>
+                    <input
+                        type="text" 
+                        name="apellido" 
+                        formControlName="apellido"
+                        [class.contact__form-field-input--invalid]="apellidoNoValido"
+                        class="contact__form-field-input">
+                        <small *ngIf="apellidoNoValido" class="contact__form-field--invalid-text">Este campo es obligatorio, mínimo 4 letras.</small>
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-field-label">Correo <span
+                            class="contact__form-field-label--red">*</span></label>
+                    <input 
+                        type="email" 
+                        name="correo" 
+                        formControlName="correo"
+                        [class.contact__form-field-input--invalid]="correoNoValido"
+                        class="contact__form-field-input">
+                        <small *ngIf="correoNoValido" class="contact__form-field--invalid-text">Este campo es obligatorio.</small>
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-field-label">Celular</label>
+                    <input 
+                        type="tel" 
+                        name="celular" 
+                        formControlName="celular"
+                        [class.contact__form-field-input--invalid]="celularNoValido"
+                        class="contact__form-field-input">
+                        <small *ngIf="correoNoValido" class="contact__form-field--invalid-text">Ingrese un número de celular valido.</small>
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-field-label">Programa de interés <span
+                            class="contact__form-field-label--red">*</span></label>
+                    <select 
+                    name="programa_interes" 
+                    class="contact__form-field-select" 
+                    [class.contact__form-field-select--invalid]="programaInteresNoValido"
+                    formControlName="programaInteres">
+                        <option class="contact__form-field-select-option" value="" disabled>Elige una opción</option>
+                        <option class="contact__form-field-select-option" *ngFor="let programa of programa_interes" [ngValue]="programa">{{ programa }}</option>
+                    </select>
+                    <small *ngIf="programaInteresNoValido" class="contact__form-field--invalid-text">Este campo es obligatorio.</small>
+                </div>
+                <div class="contact__form-field">
+                    <label class="contact__form-field-label">¿Cómo quiere ser contactado? <span
+                            class="contact__form-field-label--red">*</span></label>
+                    <select 
+                    name="como_contactarlo" 
+                    class="contact__form-field-select"
+                    [class.contact__form-field-select--invalid]="comoContactarloNoValido" 
+                    formControlName="comoContactarlo">
+                        <option class="contact__form-field-select-option" value="" disabled>Elige una opción</option>
+                        <option class="contact__form-field-select-option" *ngFor="let contacto of como_contactarlo" [ngValue]="contacto">
+                            {{ contacto }}</option>
+                    </select>
+                    <small *ngIf="comoContactarloNoValido" class="contact__form-field--invalid-text">Este campo es obligatorio.</small>
+                    <label class="contact__form-field-label--last">Las secciones con <span
+                            class="contact__form-field-label--red">*</span> son
+                        obligatorias</label>
+                </div>
+                <div class="contact__form-field">
+                    <button 
+                        type="submit" 
+                        class="contact__form-field-submit">ENVIAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="contact__content-right">
+            <h4 class="contact__content-right-title">Encuentranos</h4>
+
+        </div>
+    </div>
+</section>
+
+<hr>
+<pre>
+    Estado del formulario: {{ forma.valid }}
+    <br>
+    Status: {{ forma.status }}
+</pre>
+<pre>
+    {{ forma.value | json}}
+</pre>

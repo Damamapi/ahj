@@ -1,4 +1,4 @@
-<nav class="menu" [class.blue-bg]="url !== '/home'">
+<nav class="menu" [class.blue-bg]="url !== '/home'" [class.blue-bg--extend]="url === '/about-us'">
     <li class="menu__li" routerLinkActive="active">
         <a [routerLink]="['home']" class="menu__links">Inicio</a>
     </li>
@@ -13,7 +13,7 @@
     </li>
 </nav>
 
-<div class="logo">
+<div class="logo" [class.logo--white-angle]="url === '/home' || url === '/about-us'" [class.logo--white-angle-no-opacity]="url === '/services-ahj' || url === '/contact-us'">
     <a [routerLink]="['home']" class="logo__link">
         <img src="../../../assets/img/logo_ahj.png" alt="Logo AHJ" class="logo__img">
     </a>
