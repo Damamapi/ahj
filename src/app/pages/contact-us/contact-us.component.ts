@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ContactService } from 'src/app/service/contact.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -14,7 +13,7 @@ export class ContactUsComponent implements OnInit {
   programa_interes: any = ['Programa Au Pair', 'Programa de Pasantia en el exterior', 'Programa de Voluntariado'];
   como_contactarlo: any = ['Correo Electrónico', 'Celular', 'Punto Físico'];
 
-  constructor(private formBuilder: FormBuilder, private contactService: ContactService) {
+  constructor(private formBuilder: FormBuilder) {
 
     this.crearFormulario();
 
@@ -64,13 +63,7 @@ export class ContactUsComponent implements OnInit {
         control.markAsTouched();
       });
     } else {
-      this.contactService.postData(this.forma.value).subscribe(response => {
-        location.href = 'https://mailthis.to/confirm';
-        console.log(response);
-      }, error => {
-        console.warn(error.responseText);
-        console.log({ error });
-      });
+
     }
   }
 

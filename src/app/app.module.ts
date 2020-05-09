@@ -18,7 +18,6 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ContactService } from './service/contact.service';
 
 
 
@@ -41,7 +40,6 @@ import { ContactService } from './service/contact.service';
     ReactiveFormsModule
   ],
   providers: [
-    ContactService
   ],
   bootstrap: [AppComponent]
 })
