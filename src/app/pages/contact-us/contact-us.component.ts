@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SendEmailDataService } from 'src/app/service/send-email-data.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,11 +10,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ContactUsComponent implements OnInit {
 
   forma: FormGroup;
-
+  respuesta = false;
   programa_interes: any = ['Programa Au Pair', 'Programa de Pasantia en el exterior', 'Programa de Voluntariado'];
   como_contactarlo: any = ['Correo Electrónico', 'Celular', 'Punto Físico'];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private sendDataService: SendEmailDataService) {
 
     this.crearFormulario();
 
@@ -59,12 +60,17 @@ export class ContactUsComponent implements OnInit {
 
   guardar() {
     if (this.forma.invalid) {
-      return Object.values(this.forma.controls).forEach(control => {
-        control.markAsTouched();
-      });
+      return Object.values(this.forma.controls).forEach(control => control.markAsTouched());
     } else {
-
+      this.sendDataService.sendData(this.forma.value).subscribe((data) => {
+        this.respuesta = data;
+        setTimeout(() => {
+          this.forma.reset();
+        }, 1500);
+        setTimeout(() => {
+          this.respuesta = false;
+        }, 3000);
+      });
     }
   }
-
 }
