@@ -10,6 +10,7 @@
         display: flex;
         justify-content: space-around;
         margin-bottom: 30px;
+        width: 65%;
         &-title {
             letter-spacing: 1px;
         }
@@ -80,6 +81,11 @@
                             }
                         }
                     }
+                    &-answer {
+                        color: $secondary-color;
+                        font-family: $semibold-font;
+                        margin-bottom: 20px;
+                    }
                     &-submit {
                         border: 0;
                         background-color: $secondary-color;
@@ -96,6 +102,31 @@
                         }
                     }
                 }
+            }
+        }
+        &-right {
+            &-title {
+                margin-bottom: 20px;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                letter-spacing: 1.5px;
+                &:before {
+                    content: "";
+                    background-image: url(../../../assets/img/icons/location.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                    margin-right: 8px;
+                }
+            }
+            iframe {
+                border: 0;
+                width: 550px;
+                height: 400px;
             }
         }
     }
