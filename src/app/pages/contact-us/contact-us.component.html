@@ -65,11 +65,11 @@
                         obligatorio.</small>
                     <label class="contact__form-field-label--last">Las secciones con <span
                             class="contact__form-field-label--red">*</span> son
-                        obligatorias</label>
+                        obligatorias</label> 
                 </div>
                 <div class="contact__form-field">
                     <p *ngIf="respuesta" class="contact__form-field-answer">¡Tus datos fueron enviados, nos contactaremos contigo pronto!</p>
-                    <button type="submit" class="contact__form-field-submit">ENVIAR</button>
+                    <button type="submit" class="contact__form-field-submit" [ngClass]="{'contact__form-field-submit--waiting-loading':waiting }">ENVIAR</button>
                 </div>
             </form>
         </div>

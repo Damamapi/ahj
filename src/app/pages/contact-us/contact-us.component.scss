@@ -1,4 +1,21 @@
 @import "../../../variables.scss";
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes wk-rotateAnimation {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
 .contact {
     width: 100%;
     height: calc(100% - 150px);
@@ -6,6 +23,7 @@
     flex-direction: column;
     align-items: inherit;
     justify-content: center;
+    padding: 100px 0;
     &__trick {
         display: flex;
         justify-content: space-around;
@@ -99,6 +117,28 @@
                         transition: all ease-in-out 0.2s;
                         &:hover {
                             background-color: $primary-color;
+                        }
+                        &--waiting {
+                            &-loading {
+                                font-size: 0;
+                                width: 30px;
+                                height: 30px;
+                                margin-top: 5px;
+                                border-radius: 15px;
+                                padding: 0;
+                                border: 3px solid #e34e09;
+                                border-bottom: 3px solid rgba(255, 255, 255, 0);
+                                border-left: 3px solid rgba(255, 255, 255, 0);
+                                background-color: transparent;
+                                animation-name: rotateAnimation;
+                                -webkit-animation-name: wk-rotateAnimation;
+                                animation-duration: 1s;
+                                -webkit-animation-duration: 1s;
+                                animation-delay: 0.2s;
+                                -webkit-animation-delay: 0.2s;
+                                animation-iteration-count: infinite;
+                                -webkit-animation-iteration-count: infinite;
+                            }
                         }
                     }
                 }

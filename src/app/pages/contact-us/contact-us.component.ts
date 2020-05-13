@@ -11,6 +11,7 @@ export class ContactUsComponent implements OnInit {
 
   forma: FormGroup;
   respuesta = false;
+  waiting = false;
   programa_interes: any = ['Programa Au Pair', 'Programa de Pasantia en el exterior', 'Programa de Voluntariado'];
   como_contactarlo: any = ['Correo Electrónico', 'Celular', 'Punto Físico'];
 
@@ -62,6 +63,7 @@ export class ContactUsComponent implements OnInit {
     if (this.forma.invalid) {
       return Object.values(this.forma.controls).forEach(control => control.markAsTouched());
     } else {
+      this.waiting = true;
       this.sendDataService.sendData(this.forma.value).subscribe((data) => {
         this.respuesta = data;
         setTimeout(() => {
@@ -69,6 +71,7 @@ export class ContactUsComponent implements OnInit {
         }, 1500);
         setTimeout(() => {
           this.respuesta = false;
+          this.waiting = false;
         }, 3000);
       });
     }
