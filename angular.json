@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ahj"
+    }
+  },
+  "defaultProject": "ahj",
+  "cli": {
+    "analytics": "ab6920ba-2e16-490d-9f33-633d74985414"
+  }
 }
