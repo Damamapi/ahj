@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -35,9 +36,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     APP_ROUTING,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

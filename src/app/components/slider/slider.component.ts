@@ -21,7 +21,7 @@ export class SliderComponent implements OnInit, OnDestroy {
       let contador = this.slideSelected;
       contador++;
       this.slideSelected = contador > this.slider.length - 1 ? 0 : contador;
-    }, 10000000000);
+    }, 5000);
   }
 
   selectedSlide(index: number) {

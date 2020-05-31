@@ -1,25 +1,49 @@
-<footer class="footer">
-    <div class="footer__links">
-        <ul class="footer__links_ul">
-            <li class="footer__links_li">
-                <a href="" class="footer__links-a footer--txt_style">Nosotros</a>
-            </li>
-            <li class="footer__links_li">
-                <a href="" class="footer__links-a footer--txt_style">Servicios</a>
-            </li>
-            <li class="footer__links_li">
-                <a href="" class="footer__links-a footer--txt_style">Contáctanos</a>
-            </li>
-        </ul>
+<footer class="footer--bg">
+    <div class="footer content">
+        <div class="footer__content">
+            <ul class="footer__links_ul">
+                <li class="footer__links_li">
+                    <a [routerLink]="['about-us']" class="footer__links-a footer__content_txt--style">Nosotros</a>
+                </li>
+                <li class="footer__links_li">
+                    <a [routerLink]="['services-ahj']" class="footer__links-a footer__content_txt--style">Servicios</a>
+                </li>
+                <li class="footer__links_li">
+                    <a [routerLink]="['contact-us']" class="footer__links-a footer__content_txt--style">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__content">
+            <span class="footer__content_txt--style">Dirección: <br />Carrera 47B12 - 07</span>
+            <span class="footer__content_txt--style">Barrio La Esperanza</span>
+            <span class="footer__content_txt--style">Villavicencio</span>
+            <span class="footer__content_txt--style">Colombia</span>
+        </div>
+        <div class="footer__content">
+            <span class="footer__content_txt--style">Correo: <br />
+                <a href="mailto:ahjinternationalservice@gmail.com"
+                    class="footer__content_txt--style">ahjinternationalservice@gmail.com</a>
+            </span>
+            <span class="footer__content_txt--style">Celular: <br />
+                <a href="tel:3208897379" class="footer__content_txt--style">320 899 7379</a>
+            </span>
+            <span class="footer__content_txt--style">Fijo: <br />
+                <a href="tel:0386606480" class="footer__content_txt--style">6606480</a>
+            </span>
+        </div>
+        <div class="footer__content">
+            <a href="https://www.facebook.com/AHJ-International-Service-112313976932310" target="_blank" class="footer__content_social_network">
+                <img src="../../../../assets/img/icons/facebook_icon.png" class="footer__content_social_network-img"
+                    alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/ahjinternationalservice/?hl=es-la" target="_blank" class="footer__content_social_network">
+                <img src="../../../../assets/img/icons/instagram.png" class="footer__content_social_network-img"
+                    alt="Instagram">
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=+573208997379" target="_blank" class="footer__content_social_network">
+                <img src="../../../../assets/img/icons/whatsapp.png" class="footer__content_social_network-img"
+                    alt="Whatsapp">
+            </a>
+        </div>
     </div>
-    <div class="footer__physical_info">
-        <span class="footer__physical_info_txt footer--txt_style">Dirección: <br />Carrera 47B12 - 07</span>
-        <span class="footer__physical_info_txt footer--txt_style">Barrio La Easperanza</span>
-        <span class="footer__physical_info_txt footer--txt_style">Villavicencio</span>
-        <span class="footer__physical_info_txt footer--txt_style">Colombia</span>
-    </div>
-    <div class="footer__virtual_info">
-
-    </div>
-    <div class="footer__social_network"></div>
 </footer>

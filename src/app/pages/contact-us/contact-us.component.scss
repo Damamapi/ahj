@@ -1,0 +1,173 @@
+@import "../../../variables.scss";
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes wk-rotateAnimation {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.contact {
+    width: 100%;
+    height: calc(100% - 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: center;
+    padding: 100px 0;
+    &__trick {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        width: 65%;
+        &-title {
+            letter-spacing: 1px;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        &-left {
+            width: 385px;
+            .contact__form {
+                width: 100%;
+                &-field {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                    width: 100%;
+                    &--invalid {
+                        &-text {
+                            color: red;
+                        }
+                    }
+                    &-label {
+                        font-size: 16px;
+                        margin-bottom: 5px;
+                        font-family: $semibold-font;
+                        &--red {
+                            color: red;
+                        }
+                        &--last {
+                            margin-top: 25px;
+                            font-size: 16px;
+                            font-family: $semibold-font;
+                        }
+                    }
+                    &-input {
+                        border: 0;
+                        border-bottom: 1px solid;
+                        width: 355px;
+                        padding: 5px 20px 5px 5px;
+                        &:focus {
+                            outline: 0;
+                        }
+                        &--invalid {
+                            border-bottom: 1px solid red;
+                            &-text {
+                                color: red;
+                            }
+                        }
+                    }
+                    &-select {
+                        border: 0;
+                        border-bottom: 1px solid;
+                        width: 100%;
+                        padding: 5px 20px 5px 5px;
+                        &-option {
+                            font-size: 15px;
+                        }
+                        &:focus {
+                            outline: 0;
+                        }
+                        &--invalid {
+                            border-bottom: 1px solid red;
+                            &-text {
+                                color: red;
+                            }
+                        }
+                    }
+                    &-answer {
+                        color: $secondary-color;
+                        font-family: $semibold-font;
+                        margin-bottom: 20px;
+                    }
+                    &-submit {
+                        border: 0;
+                        background-color: $secondary-color;
+                        color: #fff;
+                        padding: 8px 30px;
+                        border-radius: 5px;
+                        font-size: 15px;
+                        font-family: $semibold-font;
+                        cursor: pointer;
+                        letter-spacing: 1px;
+                        transition: all ease-in-out 0.2s;
+                        &:hover {
+                            background-color: $primary-color;
+                        }
+                        &--waiting {
+                            &-loading {
+                                font-size: 0;
+                                width: 30px;
+                                height: 30px;
+                                margin-top: 5px;
+                                border-radius: 15px;
+                                padding: 0;
+                                border: 3px solid #e34e09;
+                                border-bottom: 3px solid rgba(255, 255, 255, 0);
+                                border-left: 3px solid rgba(255, 255, 255, 0);
+                                background-color: transparent;
+                                animation-name: rotateAnimation;
+                                -webkit-animation-name: wk-rotateAnimation;
+                                animation-duration: 1s;
+                                -webkit-animation-duration: 1s;
+                                animation-delay: 0.2s;
+                                -webkit-animation-delay: 0.2s;
+                                animation-iteration-count: infinite;
+                                -webkit-animation-iteration-count: infinite;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-right {
+            &-title {
+                margin-bottom: 20px;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                letter-spacing: 1.5px;
+                &:before {
+                    content: "";
+                    background-image: url(../../../assets/img/icons/location.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                    margin-right: 8px;
+                }
+            }
+            iframe {
+                border: 0;
+                width: 550px;
+                height: 400px;
+            }
+        }
+    }
+}
